@@ -4,11 +4,10 @@ import Contact from "@/app/models/contact";
 import mongoose from "mongoose";
 
 export async function POST(req) {
-  const { firstName, lastName, email, phone, country, message } =
+  const { name, email, phone, country, message } =
     await req.json();
 
-  console.log("First Name:" + firstName);
-  console.log("Last Name:" + lastName);
+  console.log("Name:" + name);
   console.log("Email:" + email);
   console.log("Phone:" + phone);
   console.log("Country:" + country);
@@ -17,8 +16,7 @@ export async function POST(req) {
   try {
     await connectDB();
     await Contact.create({
-      firstName,
-      lastName,
+      name,
       email,
       phone,
       country,

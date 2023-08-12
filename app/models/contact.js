@@ -1,11 +1,7 @@
 import mongoose, { Schema } from "mongoose";
 
 const contactSchema = new Schema({
-  firstName: {
-    type: String,
-    required: true
-  },
-  lastName: {
+  name: {
     type: String,
     required: true
   },
